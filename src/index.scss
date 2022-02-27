@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+:root {
+	--color-bg-yellow: #FF7D1A;
+	--color-bg-white: #ffffff;
+	
+	--color-ft-white: #ffffff;
+	--color-ft-black: #323232;
+	--color-ft-gray: #68707d;
+}
+
+body {
+	overflow: auto;
+}
+
+body, input, button, select, label {
+	font-family: 'Dongle', 'Calibri', sans-serif;
+	font-size: 20px;
+	line-height: 1;
+	font-weight: 400;
+}
+
+a {
+	color: inherit;
+}
+
+button {
+	outline: 0px;
+	border: 0px;
+	cursor: pointer;
+	background-color: #ffffff;
+}
+
+body.no-scroll {
+	overflow: hidden;
+}
