@@ -11,6 +11,8 @@
 	--color-ft-white: #ffffff;
 	--color-ft-black: #323232;
 	--color-ft-gray: #68707d;
+
+	--toastify-color-success: #FF7D1A;
 }
 
 body {
@@ -18,9 +20,9 @@ body {
 }
 
 body, input, button, select, label {
-	font-family: 'Dongle', 'Calibri', sans-serif;
-	font-size: 20px;
-	line-height: 1;
+	font-family: 'Fredoka', 'Calibri', sans-serif;
+	font-size: 16px;
+	line-height: 1.3;
 	font-weight: 400;
 }
 
@@ -37,4 +39,61 @@ button {
 
 body.no-scroll {
 	overflow: hidden;
+}
+
+.Toastify {
+
+	.Toastify__toast {
+		border-radius: 20px;
+		color: #ffffff;
+
+		&.Toastify__toast--success { 
+			background-color: #FF7D1A;
+
+			.Toastify__toast-icon svg {
+				fill: #ffffff;
+			}
+
+			.Toastify__close-button svg { 
+				fill: #ffffff;
+			}
+
+			.Toastify__progress-bar {
+				background-color: #ffffff;
+			}
+		}
+		
+		&.Toastify__toast--error { 
+			background-color: #a60c0c;
+
+			.Toastify__toast-icon svg {
+				fill: #ffffff;
+			}
+
+			.Toastify__close-button svg { 
+				fill: #ffffff;
+			}
+
+			.Toastify__progress-bar {
+				background-color: #ffffff;
+			}
+		}
+		
+		&.Toastify__toast--info { 
+			background-color: #555555;
+
+			.Toastify__toast-icon svg {
+				fill: #ffffff;
+			}
+
+			.Toastify__close-button svg { 
+				fill: #ffffff;
+			}
+
+			.Toastify__progress-bar {
+				background-color: #ffffff;
+			}
+		}
+
+	}
 }

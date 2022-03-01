@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { useFormik } from "formik";
 import InputMask from 'react-input-mask';
-import Slider from "react-slick";
 
 import { ContextCheckout } from "../../context/Checkout";
+import { formatMoney, unFormat, validCPF } from "../../utils/index";
 
 import logoSneakers from "../../assets/logo.svg";
 
@@ -22,98 +22,6 @@ import "./styles.scss";
 	ENTÃO TEMOS QUE TER O SLIDE PARA EXIBIR O RESTANTE DOS ITENS
 */
 
-const settingsSlider = {
-	arrows: true,
-	dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1
-}
-
-function formatMoney(number) {
-	return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
-		.format(number);
-}
-
-function validCPF(cpf) {
-
-    const cpfFormat = String(cpf).replace(/\D/g, "");
-
-    const cpfsInvalid = [
-        "00000000000",
-        "11111111111",
-        "22222222222",
-        "33333333333",
-        "44444444444",
-        "55555555555",
-        "66666666666",
-        "77777777777",
-        "88888888888",
-        "99999999999",
-    ]
-
-    for(let i = 0; i < cpfsInvalid.length; i++)  {
-        const currentVerication = cpfsInvalid[i];
-
-        if(cpfFormat === currentVerication) { return "Este não é um CPF válido" }
-    }
-
-    const calcularTotal = multiplicador => (resultado, numeroAtual) =>
-    resultado + numeroAtual * multiplicador--;
-
-    const calcularDigito = (parteCPF, multiplicador) => {
-
-        const total = parteCPF.reduce(calcularTotal(multiplicador), 0);
-        const resto = total % 11;
-
-        let digito = 11 - resto;
-
-        if (digito > 9) {
-            digito = 0;
-        }
-
-        return digito;
-    }
-    
-    const primeiraParteCPF = cpfFormat.substr(0, 9).split("");
-    const primeiroDigitoVerificador = Number(cpfFormat.charAt(9));
-    const primeiroDigitoCalculado = calcularDigito(primeiraParteCPF, 10);
-
-    if (primeiroDigitoVerificador !== primeiroDigitoCalculado) {        
-        return "Este não é um CPF válido"
-    }
-
-    const segundaParteCPF = cpfFormat.substr(0, 10).split("");
-    const segundoDigitoVerificador = Number(cpfFormat.charAt(10));
-    const segundoDigitoCalculado = calcularDigito(segundaParteCPF, 11);
-    
-    if (segundoDigitoVerificador !== segundoDigitoCalculado) {        
-        return "Este não é um CPF válido"
-    }
-    
-    return "CPF válido";
-}
-
-function unFormat(value, type) {
-
-    let valueFormat = null;
-
-    if(type === "CEP") {
-        valueFormat = value.replace(/[-]+/g, "");
-    }
-    else if(type === "CPF") {
-        valueFormat = value.replace(/[-\.]+/g, "");
-    }
-    else if(type === "CELULAR") {
-        valueFormat = value.replace(/[\(\)\-\s]+/g, "");
-    }
-    else if(type === "NUM-CARTAO") {
-        valueFormat = value.replace(/[\s]+/g, "");
-    }
-
-    return valueFormat;
-}
 
 function Checkout() {
 
@@ -175,7 +83,7 @@ function Checkout() {
 											<div className="sn__checkout-resume-products-list-product">
 												<figure className="sn__checkout-resume-products-list-product-image">
 													<img
-														src={`https://cdn.shopify.com/${product.url_image_1}`}
+														src={product.url_images[0]}
 														alt="sneakears"
 													/>
 												</figure>
@@ -271,7 +179,7 @@ function Checkout() {
 
 	function handleChangeCpf(event) {
 		const currentValue = event.target.value;
-		const cpfUnformat = currentValue.replace(/[-\.]+/gi, '');
+		const cpfUnformat = currentValue.replace(/[-.]+/gi, '');
 		if(cpfUnformat.length !== 11) { return }
 		
 		const result = validCPF(cpfUnformat);
@@ -281,7 +189,7 @@ function Checkout() {
 	
 	function handleChangeCpfCard(event) {
 		const currentValue = event.target.value;
-		const cpfUnformat = currentValue.replace(/[-\.]+/gi, '');
+		const cpfUnformat = currentValue.replace(/[-.]+/gi, '');
 		if(cpfUnformat.length !== 11) { return }
 		
 		const result = validCPF(cpfUnformat);

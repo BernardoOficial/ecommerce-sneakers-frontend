@@ -28,15 +28,17 @@ function Product() {
 
 		requestGetProduct();
 
-	}, [])
+	}, [productId])
 
 	return (
 		<main className="sn__product">
 
-			<div className="sn__product-introdution">
-				<ProductThumb product={product} />
-				<ProductInfo product={product} />
-			</div>
+			{product.id_product != null ? (
+				<div className="sn__product-introdution">
+					<ProductThumb product={product} />
+					<ProductInfo product={product} />
+				</div>
+			) : null }
 
 		</main>
 	);

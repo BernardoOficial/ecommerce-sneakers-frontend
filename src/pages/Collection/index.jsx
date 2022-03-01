@@ -38,10 +38,10 @@ function Collection() {
 				<ul className="sn__collection-products">
 
 					{products.map(product => (
-						<li className="sn__collection-product">
+						<li className="sn__collection-product" key={product.id_product}>
 							<figure className="sn__collection-product-image">
 								<img
-									src={`https://cdn.shopify.com${product.url_image_1}`}
+									src={product.url_images[0]}
 									alt={product.title}
 									title={product.title}
 								/>

@@ -49,6 +49,14 @@ function Header() {
 
 					<button className="sn__header-user">
 						<img src={iconUser} alt="Rodrigo" title="abrir lista" />
+
+						<nav className="sn__header-user-nav">
+							<ul>
+								<li>
+									<a href="/account">my account</a>
+								</li>
+							</ul>
+						</nav>
 					</button>
 
 				</div>

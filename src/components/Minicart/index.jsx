@@ -30,7 +30,7 @@ function Minicart() {
 						{productsInCart.length > 0 ? productsInCart.map(product => (
 							<li className="sn__minicart-items-product">
 								<div className="sn__minicart-items-product-image">
-									<img src={`https://cdn.shopify.com/${product.url_image_1}`} alt="Sneakers" />
+									<img src={product.url_images[0]} alt="Sneakers" />
 								</div>
 
 								<div className="sn__minicart-items-product-info">

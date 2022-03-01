@@ -1,4 +1,5 @@
 .sn__collection {
+	margin-bottom: 50px;
 
 	.sn__collection-wrapper {
 		max-width: 1200px;
@@ -6,7 +7,7 @@
 		margin: 0px auto;
 
 		.sn__collection-title {
-			font-size: 50px;
+			font-size: 30px;
 			font-weight: 400;
 			text-align: center;
 			margin: 40px 0px 0px;
@@ -44,9 +45,8 @@
 					text-align: left;
 					
 					.title {
-						font-size: 30px;
+						font-size: 16px;
 						font-weight: 400;
-						line-height: 1.0;
 
 						position: relative;
 
@@ -60,7 +60,7 @@
 							color: #ffffff;
 							display: inline-block;
 
-							font-size: 22px;
+							font-size: 14px;
 
 							position: absolute;
 							right: 0px;
@@ -70,7 +70,7 @@
 					}
 
 					.price {
-						font-size: 30px;
+						font-size: 14px;
 					}
 				}
 	
@@ -83,7 +83,7 @@
 						border-radius: 30px;
 						display: inline-block;
 	
-						font-size: 30px;
+						font-size: 16px;
 						color: #ffffff;
 						box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
 	

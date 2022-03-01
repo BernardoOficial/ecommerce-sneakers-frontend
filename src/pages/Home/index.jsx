@@ -12,6 +12,7 @@ function Home() {
 	return (
 		<main className="sn__home">
 			<figure className="sn__home-banner">
+				<div className="sn__home-overlay"></div>
 				<img src={bannerHome} alt="Sneakers" />
 
 				<button

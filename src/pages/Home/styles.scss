@@ -5,12 +5,22 @@
 	.sn__home-banner {
 		margin: 0px;
 		position: relative;
+		height: calc(80vh - 100px);
+
+		.sn__home-overlay {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
 
 		img {
 			width: 100%;
-			height: calc(100vh - 100px);
+			height: 100%;
 			object-fit: cover;
-			object-position: top;
+			object-position: center;
 		}
 
 		.sn__home-banner-btn {
@@ -25,7 +35,7 @@
 			line-height: 40px;
 			padding: 0 40px;
 			color: #ffffff;
-			font-size: 30px;
+			font-size: 18px;
 			box-shadow: 0 2px 2px 1px rgba(255, 255, 255, 0.2);
 
 			transition: 0.2s ease-in;

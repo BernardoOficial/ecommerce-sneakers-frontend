@@ -6,33 +6,34 @@
 
 	.sn__product-info-vendedor {
 		font-weight: 400;
-		font-size: 20px;
+		font-size: 14px;
 		color: #ff7d1a;
 		margin-bottom: 20px;
 	}
 	
 	.sn__product-info-title {
-		font-size: 40px;
+		font-size: 25px;
 		color: #323232;
 		letter-spacing: 1px;
 		margin-bottom: 10px;
 	}
 	
 	.sn__product-info-description {
-		font-size: 22px;
+		font-size: 16px;
 		color: #323232;
 		margin-bottom: 30px;
 	}
 	
 	.sn__product-info-price {
 		color: #323232;
-		font-size: 30px;
+		font-size: 20px;
 		line-height: 1;
 		margin-bottom: 30px;
 
 		.sn__product-info-price-current {
 
 			.flag {
+				vertical-align: middle;
 				background-color: #ff7d1a;
 				border-radius: 5px;
 				height: 20px;
@@ -40,14 +41,14 @@
 				line-height: 20px;
 				display: inline-block;
 				color: #ffffff;
-				font-size: 20px;
+				font-size: 14px;
 				margin-left: 10px;
 				vertical-align: middle;
 			}
 		}
 
 		.sn__product-info-price-compare {
-			font-size: 25px;
+			font-size: 14px;
 		}
 
 	}
@@ -70,7 +71,7 @@
 				text-align: center;
 				appearance: none;
 				height: 40px;
-
+				font-size: 14px;
 
 				box-shadow: 0px 0px 0px 2px #323232;
 			}
@@ -85,10 +86,10 @@
 							0px 0px 0px 5px #ff7d1a;
 
 				color: #323232;
-				font-size: 35px;
+				font-size: 20px;
 				border-radius: 30px;
 				height: 40px;
-				line-height: 43px;
+				line-height: 40px;
 
 				transition: 0.2s ease-in;
 
@@ -108,7 +109,7 @@
 			height: 50px;
 			line-height: 50px;
 			padding: 0 20px;
-			font-size: 30px;
+			font-size: 20px;
 
 			box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
 

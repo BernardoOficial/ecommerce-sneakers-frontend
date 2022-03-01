@@ -26,7 +26,7 @@ export function ProviderCheckout({ children }) {
 
 		setTotalProducts(newTotalProducts);
 		
-	}, []);
+	}, [productsInCart]);
 
 	useEffect(() => {
 		setTotalFinished(totalProducts + totalShipping);
@@ -37,7 +37,7 @@ export function ProviderCheckout({ children }) {
 	}
 
 	function updadeShipping() {
-		// setTotalShipping();
+		setTotalShipping();
 	}
 
 	return (
@@ -49,6 +49,7 @@ export function ProviderCheckout({ children }) {
 			mercadoPago,
 			parcelas,
 			newInstallmentsCard,
+			updadeShipping
 		}}>
 			{children}
 		</ContextCheckout.Provider>
