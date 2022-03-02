@@ -70,10 +70,10 @@ export function unFormat(value, type) {
         valueFormat = value.replace(/[-]+/g, "");
     }
     else if(type === "CPF") {
-        valueFormat = value.replace(/[-\.]+/g, "");
+        valueFormat = value.replace(/[-.]+/g, "");
     }
     else if(type === "CELULAR") {
-        valueFormat = value.replace(/[\(\)\-\s]+/g, "");
+        valueFormat = value.replace(/[()\-\s]+/g, "");
     }
     else if(type === "NUM-CARTAO") {
         valueFormat = value.replace(/[\s]+/g, "");

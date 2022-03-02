@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import { useCookies } from "react-cookie";
 
 import { instanceAxios } from "../../../services/axios";
 
@@ -9,6 +10,7 @@ import "./styles.scss";
 function Register() {
 
 	const navigate = useNavigate();
+	const [cookies, setCookie] = useCookies([]);
 
 	const initialValuesFields = {
 		senha: '',
@@ -42,17 +44,17 @@ function Register() {
 			password: values.senha,
 		}
 
-		console.log(bodyPayment);
-
 		try {
-			const response = await instanceAxios.get('http://localhost:4000/customers', bodyPayment);
+			const response = await instanceAxios.post('http://localhost:4000/token', bodyPayment);
 			const data = response.data;
 			console.log(data);
 			toast.success("login feito com sucesso");
 			formik.resetForm();
 
+			setCookie("token-store-sneakers", data.token, { path: '/' });
+
 			setTimeout(() => {
-				navigate('/account');
+				// navigate('/account');
 			}, 3000);
 
 		} catch (error) {

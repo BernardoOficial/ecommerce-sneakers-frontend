@@ -15,7 +15,7 @@ import Register from "./pages/Account/Register";
 import { ProviderMinicart } from "./context/Minicart";
 import { ProviderCheckout } from "./context/Checkout";
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 

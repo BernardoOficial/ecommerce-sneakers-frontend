@@ -4,7 +4,6 @@ import { ContextMinicart } from "./Minicart";
 
 export const ContextCheckout = createContext({});
 
-console.log(process.env.REACT_APP_MP_PUBLIC_TOKEN_DEV);
 const mercadoPago = new window.MercadoPago(process.env.REACT_APP_MP_PUBLIC_TOKEN_DEV);
 
 export function ProviderCheckout({ children }) {

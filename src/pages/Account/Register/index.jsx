@@ -1,8 +1,7 @@
 import { useFormik } from "formik";
 import InputMask from 'react-input-mask';
-import { Navigate, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 import { unFormat, validCPF } from "../../../utils/index";
 import { instanceAxios } from "../../../services/axios";
